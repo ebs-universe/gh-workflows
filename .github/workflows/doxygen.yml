@@ -10,6 +10,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: List main repository contents
+        run: ls -al
         
       - name: Checkout docbuilder repository
         uses: actions/checkout@v4
@@ -17,6 +20,12 @@ jobs:
           repository: ebs-universe/docbuilder-piolib
           path: docbuilder
 
+      - name: List docbuilder contents
+        run: ls -al docbuilder
+
+      - name: List main repository contents
+        run: ls -al 
+        
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
