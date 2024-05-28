@@ -2,7 +2,6 @@ name: Generate Doxygen Documentation for EBS piolib Formatted Projects
 
 on:
   workflow_call:
-    inputs:
 
 jobs:
   generate-docs:
@@ -10,13 +9,13 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout
+        uses: actions/checkout@v2
 
       - name: Clone docbuilder repository
         run: git clone https://github.com/ebs-universe/docbuilder-piolib.git docbuilder
 
       - name: Set up Python
-        uses: actions/setup-python
+        uses: actions/setup-python@v2
         with:
           python-version: 3.x
 
